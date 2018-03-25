@@ -1,0 +1,56 @@
+% ----------------------------------------------------------
+% Enunciado:
+% ----------------------------------------------------------
+
+Siga o procedimento abaixo:
+
+Baixe o arquivo anexo a esta prática (praticaI.wav) de áudio qualidade CD (44.1 KHz, 16 bits/amostra, mono). Em seguida, faça as conversões abaixo acumuladamente usando o software Audacity (Versão Zipada) e responda as questões:
+
+A) Calcule o tamanho teórico do áudio (parte de dados) e explique porque o tamanho em disco do arquivo de áudio é maior que o tamanho teórico. Para ver o tamanho do arquivo em disco, visualize as propriedades do arquivo.
+
+B) Baixe taxa de amostragem para 11025Hz (no Audacity modifique a frequência de amostragem no canto inferior esquerdo "Taxa do Projeto" e depois exporte o áudio, mantendo o mesmo tipo de arquivo). Em seguida, abra o arquivo salvo. Após isso, indique em seu relatório: i) o tamanho teórico da mídia; ii) a maior componte de frequência teórico para o novo formato do áudio; e iii) explique a diferença do som original e o som gerado após a mudança da taxa do projeto, e porque ocorreu esta diferença.
+
+C) Após reduzir a taxa de amostragem em B), reduza o número de bits por amostra pela metade (8bits - no Audacity utilize o Ficheiro>Exportar, optando por "outros arquivos sem compactação" e pelo PCM 8 bits não sinalizado).  Abra o arquivo salvo e indique em seu relatório:  i) o tamanho teórico da mídia; ii) a maior componte de frequência teórico para o novo formato do áudio; iii) explique a diferença do som gerado na etapa B) e o som gerado após esta mudança, e porque ocorreu esta diferença. Observe principalmente nos intervalos que antes havia silêncio.
+
+D) Salvar formato telefone (8000 amostras/s, 8 bits/amostra, mono), em seguida indique:  i) o tamanho teórico da mídia; ii) o valor máximo de componente de frequência teórico para o novo formato do áudio; iii) explique a diferença do som gerado na etapa C) e o som gerado após esta mudança, e porque ocorreu esta diferença. Observe principalmente nos intervalos que antes havia silêncio, e os tempos onde anterioremnte havia som...
+
+
+% ----------------------------------------------------------
+% Respostas:
+% ----------------------------------------------------------
+
+A)
+
+Tamanho teórico: (44100 * 16 * 10) / 8 = 882000bytes + 44bytes (cabeçalho formato ".wav")
+
+O tamanho em disco é maior devido a ocupação dos arquivos nos clusters do disco, que pode causar a fragmentação do mesmo, fazendo com que um arquivo ocupe um espaço maior. Por exemplo, um arquivo de 21KB armazenado em disco com clusters de tamanho de 4KB irá ocupar 6 clusters que irão resultar em uma ocupação total de 24KB sobrando 3KB com "lixo".
+
+ 
+
+B) 
+
+i   - Tamanho teórico: (11025 * 16 * 10) / 8 = 220500bytes + 44bytes (cabeçalho formato ".wav")
+
+ii  - Segundo o teorema de Nyquist, a maior componente de frequência será de: 11025/2 = 5512.5Hz
+
+iii - A mudança no som ocorreu, pois ao mudar a taxa de amostragem, frequencias acima de 5512.5Hz foram filtradas pelo filtro passa baixa do programa audacity, pois estas frequências maiores que a componente máxima de frequência de Nyquist podem causar a pseudonímia (aliasing).
+
+ 
+
+C)
+
+i   - Tamanho teórico: (11025 * 8 * 10) / 8 = 110250bytes + 44bytes (cabeçalho formato ".wav")
+
+ii  - Segundo o teorema de Nyquist, a maior componente de frequência será de: 11025/2 = 5512.5Hz
+
+iii - Se observou após esta mudança a presença de ruído no áudio, isso se deve ao fato de diminuir o tamanho da amostra para 8 bits. Quanto maior o tamanho da amostra (quanto mais bits) maior é a diferença entre o nível mais alto de reprodução e o ruído. Ao se diminuir a amostra para 8 bits esse ruído que econtrava-se distante do nível mais alto de reprodução se tornou presente no nível mais alto de reprodução do áudio e passou a ser ouvido.
+
+ 
+
+D)
+
+i   - Tamanho teórico: (8000 * 8 * 10) / 8 = 80000bytes + 44bytes (cabeçalho formato ".wav")
+
+ii  - Segundo o teorema de Nyquist, a maior componente de frequência será de: 8000/2 = 4000Hz
+
+iii - Estas diferenças aconteceram pois houve a mudança na taxa de amostragem, que devido ao filtro passa baixa fez com que apenas sons na frequência abaixo de 4000Hz fossem capturados, além da diminuição dos trechos com som audível os ruídos se acentuaram e o tempo em silêncio com ruídos aumentos.
