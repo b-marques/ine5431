@@ -53,4 +53,4 @@ i   - Tamanho teórico: (8000 * 8 * 10) / 8 = 80000bytes + 44bytes (cabeçalho f
 
 ii  - Segundo o teorema de Nyquist, a maior componente de frequência será de: 8000/2 = 4000Hz
 
-iii - Estas diferenças aconteceram pois houve a mudança na taxa de amostragem, que devido ao filtro passa baixa fez com que apenas sons na frequência abaixo de 4000Hz fossem capturados, além da diminuição dos trechos com som audível os ruídos se acentuaram e o tempo em silêncio com ruídos aumentos.
+iii - Estas diferenças aconteceram pois houve a mudança na taxa de amostragem, que devido ao filtro passa baixa fez com que apenas sons na frequência abaixo de 4000Hz fossem capturados, além da diminuição dos trechos com som audível os ruídos se acentuaram e o tempo em silêncio com ruídos aumentou.
