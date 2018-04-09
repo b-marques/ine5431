@@ -1,0 +1,10 @@
+Prática II
+
+Baixe classes JImagePanel.java e ImageApp.java que apresenta a imagem RGB.jpg e outras imagens. Inicialmente faremos uma revisão sobre manipulação de imagens em Java. Após, altere a classe JImageApp para realizar as seguintes apresentações de imagem:
+
+1 - Reduza em 1/4 a resolução vertical e horizontal  da imagem RGB.jpg e apresente esta imagem.
+2 - Transforme a imagem original RGB.jpg em tons de cinza e a apresente.
+3 - Transforme a imagem original RGB.jpg em imagem binária e a apresenta.
+4 - Gere e apresente 3 imagens fazendo a função de split RGB sobre a imagem RGB.jpg: ImagemVermelho, ImagemVerde e ImagemAzul. Estas imagens deverão ser no formato tons de cinza, sendo que o valor de cada pixel representará a intensidade luminosa proporcional ao componente de cor vermelho do pixel original, para ImagemVermelho, ao componente de cor verde para ImagemVerde, e ao componente de cor azul para ImagemAzul.
+
+Entregue o arquivo ImageApp.java com as funcionalidades acima.
